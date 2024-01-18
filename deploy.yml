@@ -1,0 +1,17 @@
+--- # Packages Deploy on Target Version1
+- hosts: localhost
+  user: root
+  become: yes
+  connection: ssh
+  tasks:
+    - name: Install Git on Target Machine
+      action: yum name=git state=installed
+
+    - name: Install docker on Target Machine
+      action: yum name=docker state=installed
+
+    # - name: Install Nginx on Target Machine
+    #   action: yum name=pcp-pmda-nginx.x86_64 state=installed
+
+    # - name: Start Nginx Service
+    #   service: name=nginx state=started
